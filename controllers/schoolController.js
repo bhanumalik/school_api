@@ -28,7 +28,8 @@ exports.addSchool = (req, res) => {
 
 // ✅ LIST SCHOOLS (separate function)
 exports.listSchools = (req, res) => {
-  const { latitude, longitude } = req.query;
+     const latitude = parseFloat(req.query.latitude);
+  const longitude = parseFloat(req.query.longitude);
 
   if (!latitude || !longitude) {
     return res.status(400).json({ message: "User location required" });
