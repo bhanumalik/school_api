@@ -3,7 +3,7 @@ const calculateDistance = require("../utils/distance");
 
 // ✅ ADD SCHOOL
 exports.addSchool = (req, res) => {
-  const { name, address, latitude, longitude } = req.body;
+ const { name, address, latitude, longitude } = req.body || {};
 
   // Validation
   if (!name || !address || latitude == null || longitude == null) {
