@@ -1,16 +1,13 @@
-const schoolRoutes = require("./routes/schoolRoutes");
 const express = require("express");
 require("dotenv").config();
 
 const db = require("./config/db");
+const schoolRoutes = require("./routes/schoolRoutes");
 
 const app = express();
 
 app.use(express.json());
-
-app.use(express.json());
-
-app.use("/api", schoolRoutes);
+app.use("/api", schoolRoutes);   // ✅ THIS MUST EXIST
 
 app.get("/", (req, res) => {
   res.send("Server is running 🚀");
